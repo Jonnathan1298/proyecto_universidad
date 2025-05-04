@@ -1,0 +1,440 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1" />
+
+    <!-- Archivos CSS -->
+    <link
+      rel="stylesheet"
+      href="{% static 'font/iconsmind-s/css/iconsminds.css' %}" />
+    <link
+      rel="stylesheet"
+      href="{% static 'font/simple-line-icons/css/simple-line-icons.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/vendor/bootstrap.min.css' %}" />
+    <link
+      rel="stylesheet"
+      href="{% static 'css/vendor/bootstrap.rtl.only.min.css' %}" />
+    <link
+      rel="stylesheet"
+      href="{% static 'css/vendor/perfect-scrollbar.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/dore.light.bluenavy.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/main.css' %}" />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+
+    <title>Portal CITT</title>
+  </head>
+
+  <body id="app-container" class="menu-default menu-sub-hidden">
+    <!-- Navbar -->
+    <nav class="navbar fixed-top">
+      <div class="d-flex align-items-center w-100">
+        <!-- Sección izquierda -->
+        <div class="d-flex align-items-center">
+          <!-- Botón de menú -->
+          <button class="menu-button d-none d-md-inline-block" type="button">
+            <i class="simple-icon-menu rotate-icon"></i>
+          </button>
+
+          <!-- Barra de búsqueda -->
+          <div class="search ml-3" data-search-path="Pages.Search.html?q=">
+            <input placeholder="Search..." />
+            <span class="search-icon">
+              <i class="simple-icon-magnifier"></i>
+            </span>
+          </div>
+        </div>
+
+        <!-- Título central -->
+        <div class="navbar-brand mx-auto d-flex align-items-center">
+          <a href="{% url 'home' %}" class="text-decoration-none">
+            <span class="text-primary font-weight-bold">Portal CITT</span>
+          </a>
+          <div class="vertical-separator"></div>
+          <a href="https://upec.edu.ec/" target="_blank">
+            <img alt="UPEC" src="{% static 'img/logo_upec.png' %}" class="upec-logo" />
+          </a>
+        </div>
+
+        <!-- Sección derecha -->
+<div class="d-flex align-items-center">
+  {% if user.is_authenticated %}
+    <!-- Usuario -->
+    <div class="user d-inline-block ml-3 dropdown">
+      <button class="btn btn-empty p-0" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <span class="name">{{ user.get_full_name }}</span>
+        <span>
+          <img alt="Profile Picture" src="{% static 'img/profiles/l-4.jpg' %}" />
+        </span>
+      </button>
+      <!-- Dropdown menú de usuario -->
+      <div class="dropdown-menu dropdown-menu-right mt-3">
+        <a class="dropdown-item" href="#">
+          <i class="simple-icon-user mr-2"></i> Perfil
+        </a>
+        <a class="dropdown-item" href="#">
+          <i class="simple-icon-envelope mr-2"></i> Mensajes
+        </a>
+        <a class="dropdown-item" href="#">
+          <i class="simple-icon-bell mr-2"></i> Notificaciones
+        </a>
+        <div class="dropdown-divider"></div>
+        <a class="dropdown-item" href="{% url 'salir' %}">
+          <i class="simple-icon-power mr-2"></i> Cerrar Sesión
+        </a>
+      </div>
+    </div>
+  {% else %}
+    <!-- Botón de Login/Registration -->
+    <a class="btn btn-primary ml-3" href="{% url 'login' %}">Login/Registration</a>
+  {% endif %}
+</div>
+    </nav>
+
+    <!-- Menú -->
+    <div class="menu">
+      <!-- Menú Principal -->
+      <div class="main-menu">
+        <div class="scroll">
+          <ul class="list-unstyled">
+            <li class="{% if seccion_activa == 'ott' %}active{% endif %}">
+              <a href="{% url 'ott' %}" data-link="ott">
+                <i class="iconsminds-police-station"></i>
+                <span style="display: block;">OTT</span>
+              </a>
+            </li>
+            <li
+              class="{% if seccion_activa == 'incubadora' %}active{% endif %}">
+              <a href="{% url 'incubadora' %}" data-link="incubadora">
+                <i class="iconsminds-plant"></i>
+                <span style="display: block;">Incubadora</span>
+              </a>
+            </li>
+            <li
+              class="{% if seccion_activa == 'uexperimentales' %}active{% endif %}">
+              <a href="{% url 'uexperimentales' %}" data-link="uexperimentales">
+                <i class="iconsminds-chemical"></i>
+                <span style="display: block;">Unidades Experimentales</span>
+              </a>
+            </li>
+            <li class="{% if seccion_activa == 'hublab' %}active{% endif %}">
+              <a href="{% url 'hublab' %}" data-link="hublab">
+                <i class="iconsminds-start-2"></i>
+                <span style="display: block;">HubLab</span>
+              </a>
+            </li>
+            <li class="{% if seccion_activa == 'formacion' %}active{% endif %}">
+              <a href="{% url 'formacion' %}" data-link="formacion">
+                <i class="iconsminds-student-male"></i>
+                <span style="display: block;">Formación</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Menú Secundario -->
+      <div class="sub-menu">
+        <div class="scroll">
+          <!-- Submenú OTT -->
+          <ul class="list-unstyled" data-link="ott">
+            <li>
+              <a href="{% url 'ott_quienes_somos' %}">
+                <span class="d-inline-block">¿Quiénes somos?</span>
+              </a>
+            </li>
+            <li>
+              <a href="{% url 'ott_servicios' %}">
+                <span class="d-inline-block">Servicios</span>
+              </a>
+            </li>
+            <li>
+              <a href="{% url 'ott_innovacion_tecnologica' %}">
+                <span class="d-inline-block">Innovación tecnológica</span>
+              </a>
+            </li>
+            <li>
+              <a href="{% url 'ott_capacitacion_consultoria' %}">
+                <span class="d-inline-block">Capacitación y consultoría</span>
+              </a>
+            </li>
+            <li>
+              <a href="{% url 'ott_colaboracion_industria' %}">
+                <span class="d-inline-block">Colaboración con industria</span>
+              </a>
+            </li>
+            <li>
+              <a href="{% url 'ott_impacto_resultados' %}">
+                <span class="d-inline-block">Impacto y resultados</span>
+              </a>
+            </li>
+            <li>
+              <a href="{% url 'ott_contacto' %}">
+                <span class="d-inline-block">Contacto y recursos</span>
+              </a>
+            </li>
+          </ul>
+
+          <!-- Submenú Incubadora -->
+          <ul class="list-unstyled" data-link="incubadora">
+            <li>
+              <a href="#" data-toggle="collapse" data-target="#collapse-incubadora-startup"
+                aria-expanded="false"
+                aria-controls="#collapse-incubadora-startup"
+                class="rotate-arrow-icon opacity-50">
+                <i class="simple-icon-arrow-down"></i>
+                <span class="d-inline-block">Impulsa tu startup</span>
+              </a>
+              <div id="collapse-incubadora-startup" class="collapse">
+                <ul class="list-unstyled inner-level-menu">
+                  <!-- Pestañas desplegables-->
+                  <li>
+                    <a href="{% url 'incubadora_proceso_incubacion' %}">
+                      <span class="d-inline-block">Proceso de incubación</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="{% url 'incubadora_registro_ideas' %}">
+                      <span class="d-inline-block">Registro de nuevas ideas</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="{% url 'incubadora_recursos_emprendedores' %}">
+                      <span class="d-inline-block">Recursos para emprendedores</span>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </li>
+
+            <li>
+              <a href="#" data-toggle="collapse" data-target="#collapse-incubadora-recursos"
+                aria-expanded="false"
+                aria-controls="#collapse-incubadora-recursos"
+                class="rotate-arrow-icon opacity-50">
+                <i class="simple-icon-arrow-down"></i>
+                <span class="d-inline-block">Accede a recursos</span>
+              </a>
+              <div id="collapse-incubadora-recursos" class="collapse">
+                <ul class="list-unstyled inner-level-menu">
+                  <!-- Pestañas desplegables-->
+                  <li>
+                    <a href="{% url 'incubadora_espacios_trabajo' %}">
+                      <span class="d-inline-block">Espacios de trabajo</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="{% url 'incubadora_herramientas_tecnologicas' %}">
+                      <span class="d-inline-block">Herramientas tecnológicas</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="{% url 'incubadora_servicios_mentoria' %}">
+                      <span class="d-inline-block">Servicios de mentoría</span>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </li>
+
+            <li>
+              <a href="#" data-toggle="collapse" data-target="#collapse-incubadora-red"
+                aria-expanded="false"
+                aria-controls="#collapse-incubadora-red"
+                class="rotate-arrow-icon opacity-50">
+                <i class="simple-icon-arrow-down"></i>
+                <span class="d-inline-block">Construye tu red</span>
+              </a>
+              <div id="collapse-incubadora-red" class="collapse">
+                <ul class="list-unstyled inner-level-menu">
+                  <!-- Pestañas desplegables-->
+                  <li>
+                    <a href="{% url 'incubadora_comunidad_innovadores' %}">
+                      <span class="d-inline-block">Comunidad de innovadores</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="{% url 'incubadora_red_mentores' %}">
+                      <span class="d-inline-block">Red de mentores</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="{% url 'incubadora_foro_colaborativo' %}">
+                      <span class="d-inline-block">Foro colaborativo</span>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </li>
+
+            <li>
+              <a href="#" data-toggle="collapse" data-target="#collapse-incubadora-exito"
+                aria-expanded="false"
+                aria-controls="#collapse-incubadora-exito"
+                class="rotate-arrow-icon opacity-50">
+                <i class="simple-icon-arrow-down"></i>
+                <span class="d-inline-block">Prepárate para el éxito</span>
+              </a>
+              <div id="collapse-incubadora-exito" class="collapse">
+                <ul class="list-unstyled inner-level-menu">
+                  <!-- Pestañas desplegables-->
+                  <li>
+                    <a href="{% url 'incubadora_talleres_cursos' %}">
+                      <span class="d-inline-block">Talleres y cursos</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="{% url 'incubadora_programas_aceleracion' %}">
+                      <span class="d-inline-block">Programas de aceleración</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="{% url 'incubadora_acceso_financiamiento' %}">
+                      <span class="d-inline-block">Acceso a financiamiento</span>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </li>
+
+            <li>
+              <a href="#" data-toggle="collapse" data-target="#collapse-incubadora-historias"
+                aria-expanded="false"
+                aria-controls="#collapse-incubadora-historias"
+                class="rotate-arrow-icon opacity-50">
+                <i class="simple-icon-arrow-down"></i>
+                <span class="d-inline-block">Descubre historias</span>
+              </a>
+              <div id="collapse-incubadora-historias" class="collapse">
+                <ul class="list-unstyled inner-level-menu">
+                  <!-- Pestañas desplegables-->
+                  <li>
+                    <a href="{% url 'incubadora_emprendedores_destacados' %}">
+                      <span class="d-inline-block">Emprendedores destacados</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="{% url 'incubadora_historias_impacto' %}">
+                      <span class="d-inline-block">Historias de impacto</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="{% url 'incubadora_proyectos_incubados' %}">
+                      <span class="d-inline-block">Proyectos incubados</span>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </li>
+          </ul>
+
+          <!-- Submenú Unidades Experimentales-->
+          <ul class="list-unstyled" data-link="uexperimentales">
+            <li>
+              <a href="#" data-toggle="collapse" data-target="#collapse-ue-centros"
+                aria-expanded="false"
+                aria-controls="#collapse-ue-centros"
+                class="rotate-arrow-icon opacity-50">
+                <i class="simple-icon-arrow-down"></i>
+                <span class="d-inline-block">Centros Experimentales</span>
+              </a>
+              <div id="collapse-ue-centros" class="collapse">
+                <ul class="list-unstyled inner-level-menu">
+                  <!-- Pestañas desplegables-->
+                  <li>
+                    <a href="{% url 'uexperimentales_centro_fransisco' %}">
+                      <span class="d-inline-block">Centro Experimental San Fransisco</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="{% url 'uexperimentales_centro_alonso' %}">
+                      <span class="d-inline-block">Centro Experimental Alonso Tadeo</span>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </li>
+            <li>
+              <a href="#" data-toggle="collapse" data-target="#collapse-ue-laboratorios"
+                aria-expanded="false"
+                aria-controls="#collapse-ue-laboratorios"
+                class="rotate-arrow-icon opacity-50">
+                <i class="simple-icon-arrow-down"></i>
+                <span class="d-inline-block">Laboratorios</span>
+              </a>
+              <div id="collapse-ue-laboratorios" class="collapse">
+                <ul class="list-unstyled inner-level-menu">
+                  <!-- Pestañas desplegables-->
+                  <li>
+                    <a href="{% url 'uexperimentales_realidad_aumentada' %}">
+                      <span class="d-inline-block">Laboratorio de Realidad Aumentada</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="{% url 'uexperimentales_smartdatalab' %}">
+                      <span class="d-inline-block">SamrtDataLab</span>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </li>
+          </ul>
+
+          <!-- Submenú HubLab -->
+          <ul class="list-unstyled" data-link="hublab">
+            <li>
+              <a href="#">
+                <span class="d-inline-block">HubLab</span>
+              </a>
+            </li>
+            <!-- ... otros items del submenu ... -->
+          </ul>
+
+          <!-- Submenú Formación -->
+          <ul class="list-unstyled" data-link="formacion">
+            <li>
+              <a href="#">
+                <span class="d-inline-block">Formación</span>
+              </a>
+            </li>
+            <!-- ... otros items del submenu ... -->
+          </ul>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- Contenido Principal -->
+    <main>
+      {% block content %} {% endblock %}
+    </main>
+
+    <!-- Footer -->
+    <footer class="page-footer">
+      <div class="footer-content">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-12 col-sm-6">
+              <p class="mb-0 text-muted">CITT 2025</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="{% static 'js/vendor/jquery-3.3.1.min.js' %}"></script>
+    <script src="{% static 'js/vendor/bootstrap.bundle.min.js' %}"></script>
+    <script src="{% static 'js/vendor/perfect-scrollbar.min.js' %}"></script>
+    <!-- Agregar los scripts faltantes -->
+    <script src="{% static 'js/vendor/bootstrap.notify.min.js' %}"></script>
+    <script src="{% static 'js/vendor/mousetrap.min.js' %}"></script>
+    <script src="{% static 'js/dore.script.js' %}"></script>
+    <script src="{% static 'js/scripts.js' %}"></script>
+
+    {% block extra_scripts %}{% endblock %}
+  </body>
+</html>

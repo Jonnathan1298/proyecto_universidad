@@ -1,0 +1,185 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="container-fluid">
+    <!-- Encabezado principal -->
+    <div class="text-center mb-4">
+        <h1>Oficina de Transferencia Tecnológica</h1>
+        <p><i>Conectando la investigación académica con el impacto social</i></p>
+    </div>
+
+    <!-- Video o imagen de presentación -->
+    <div class="row mb-5">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-body text-center">
+                    <img src="{% static 'img/ott/banner_ott.jpg' %}" alt="OTT Banner" class="img-fluid rounded">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Misión y Visión -->
+    <div class="row mb-4">
+        <div class="col-12 col-xl-6 mb-4">
+            <div class="card h-100">
+                <div class="card-body">
+                    <h2 class="mb-4">Misión</h2>
+                    <p>Facilitar la transferencia efectiva de conocimientos y tecnologías desarrolladas en nuestra institución hacia la sociedad, promoviendo la innovación y el desarrollo económico regional.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-xl-6 mb-4">
+            <div class="card h-100">
+                <div class="card-body">
+                    <h2 class="mb-4">Visión</h2>
+                    <p>Ser un referente nacional en la gestión de transferencia tecnológica, reconocidos por nuestra capacidad de convertir la investigación académica en soluciones que beneficien a la sociedad.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Objetivos Estratégicos -->
+    <div class="row">
+        <div class="col-12">
+            <div class="card mb-4">
+                <div class="card-body">
+                    <h2 class="mb-4">Objetivos Estratégicos</h2>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <ul class="list-unstyled">
+                                <li class="mb-3">
+                                    <i class="simple-icon-check mr-2 text-primary"></i>
+                                    Facilitar la conversión de resultados de investigación en productos y servicios
+                                </li>
+                                <li class="mb-3">
+                                    <i class="simple-icon-check mr-2 text-primary"></i>
+                                    Promover el desarrollo económico regional y la creación de empleo
+                                </li>
+                                <li class="mb-3">
+                                    <i class="simple-icon-check mr-2 text-primary"></i>
+                                    Gestionar la propiedad intelectual institucional
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="col-md-6">
+                            <ul class="list-unstyled">
+                                <li class="mb-3">
+                                    <i class="simple-icon-check mr-2 text-primary"></i>
+                                    Fomentar relaciones universidad-empresa
+                                </li>
+                                <li class="mb-3">
+                                    <i class="simple-icon-check mr-2 text-primary"></i>
+                                    Apoyar la creación de spin-offs
+                                </li>
+                                <li class="mb-3">
+                                    <i class="simple-icon-check mr-2 text-primary"></i>
+                                    Generar recursos financieros complementarios
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Equipo de Trabajo -->
+    <div class="row">
+        <div class="col-12">
+            <div class="card mb-4">
+                <div class="card-body">
+                    <h2 class="mb-4 text-center">Equipo de Trabajo</h2>
+                    <div class="row justify-content-center">
+                        <!-- Miembros del equipo -->
+                        <div class="col-12 col-md-6 col-xl-3 d-flex justify-content-center">
+                            <div class="card mb-4">
+                                <div class="card-body text-center">
+                                    <div class="img-container mx-auto" style="width: 100px; height: 100px; overflow: hidden;">
+                                        <img src="{% static 'img/ott/perfil_1.png' %}" class="img-fluid">
+                                    </div>
+                                    <div class="pt-3">
+                                        <h6 class="mb-1">MSc. Miguel Caicedo</h6>
+                                        <p class="text-muted mb-2">Director OTT</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>                        
+                        <div class="col-12 col-md-6 col-xl-3 d-flex justify-content-center">
+                            <div class="card mb-4">
+                                <div class="card-body text-center">
+                                    <div class="img-container mx-auto" style="width: 100px; height: 100px; overflow: hidden;">
+                                        <img src="{% static 'img/ott/perfil_3.png' %}" class="img-fluid">
+                                    </div>
+                                    <div class="pt-3">
+                                        <h6 class="mb-1">MSc. Anabel Bastidas</h6>
+                                        <p class="text-muted mb-2">Miembro OTT</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>                        
+                        <div class="col-12 col-md-6 col-xl-3 d-flex justify-content-center">
+                            <div class="card mb-4">
+                                <div class="card-body text-center">
+                                    <div class="img-container mx-auto" style="width: 100px; height: 100px; overflow: hidden;">
+                                        <img src="{% static 'img/ott/perfil_2.png' %}" class="img-fluid">
+                                    </div>
+                                    <div class="pt-3">
+                                        <h6 class="mb-1">MSc. Raul Rosero</h6>
+                                        <p class="text-muted mb-2">Miembro OTT</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Infraestructura -->
+    <div class="row">
+        <div class="col-12">
+            <div class="card mb-4">
+                <div class="card-body">
+                    <h2 class="mb-4">Infraestructura</h2>
+                    <div class="row">
+                        <div class="col-12 col-md-6 col-xl-4 mb-4">
+                            <div class="card">
+                                <div class="card-body text-center">
+                                    <i class="iconsminds-microscope icon-size mb-4 text-primary"></i>
+                                    <h6 class="pt-3">Laboratorios de Investigación</h6>
+                                    <p>Espacios equipados para el desarrollo de proyectos innovadores</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-6 col-xl-4 mb-4">
+                            <div class="card">
+                                <div class="card-body text-center">
+                                    <i class="iconsminds-conference icon-size mb-4 text-primary"></i>
+                                    <h6 class="pt-3">Salas de Reuniones</h6>
+                                    <p>Espacios para encuentros con empresas y colaboradores</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-6 col-xl-4 mb-4">
+                            <div class="card">
+                                <div class="card-body text-center">
+                                    <i class="iconsminds-computer icon-size mb-4 text-primary"></i>
+                                    <h6 class="pt-3">Centro de Desarrollo</h6>
+                                    <p>Área especializada para prototipado y desarrollo tecnológico</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_scripts %}
+<!-- Scripts específicos para la página si son necesarios -->
+{% endblock %}
