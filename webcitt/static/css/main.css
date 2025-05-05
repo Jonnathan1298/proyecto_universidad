@@ -1,23 +1,23 @@
 :root {
   /* Colores base */
   --separator-color-light: #f3f3f3;
-  --separator-color: #5F5F5F; 
-  --background-color: #FFFFFF;
-  --foreground-color: #6F6F6F;
+  --separator-color: #5f5f5f;
+  --background-color: #ffffff;
+  --foreground-color: #6f6f6f;
   --input-background: white;
 
   /* Colores de botones */
   --dark-btn-background: #126937;
-  --light-btn-background: #FECE00;
+  --light-btn-background: #fece00;
   --button-text-color: #fff;
 
   /* Colores principales */
   --theme-color-1: #126937;
   --theme-color-2: #116133;
-  --theme-color-3: #FECE00;
-  --theme-color-4: #FFFFFF;
-  --theme-color-5: #6F6F6F;
-  --theme-color-6: #5F5F5F;
+  --theme-color-3: #fece00;
+  --theme-color-4: #ffffff;
+  --theme-color-5: #6f6f6f;
+  --theme-color-6: #5f5f5f;
 
   /* Colores con transparencia */
   --theme-color-1-10: rgba(18, 105, 55, 0.1);
@@ -29,16 +29,16 @@
 
   /* Colores primarios y secundarios */
   --primary-color: #126937;
-  --secondary-color: #6F6F6F;
+  --secondary-color: #6f6f6f;
 
   /* Fuentes */
-  --heading-font-family: 'Montserrat', sans-serif;
-  --content-font-family: 'Poppins', sans-serif;
+  --heading-font-family: "Montserrat", sans-serif;
+  --content-font-family: "Poppins", sans-serif;
 
   /* Configuración base para bordes redondeados */
-  --border-radius-lg: 0.75rem;    /* Para contenedores grandes */
-  --border-radius-md: 0.5rem;     /* Para cards y elementos medianos */
-  --border-radius-sm: 0.25rem;    /* Para elementos pequeños */
+  --border-radius-lg: 0.75rem; /* Para contenedores grandes */
+  --border-radius-md: 0.5rem; /* Para cards y elementos medianos */
+  --border-radius-sm: 0.25rem; /* Para elementos pequeños */
 }
 
 html {
@@ -51,12 +51,12 @@ body {
   font-family: var(--content-font-family);
 }
 
-body.show-spinner>main {
+body.show-spinner > main {
   overflow: hidden !important;
 }
 
 /* Hide everything under body tag */
-body.show-spinner>* {
+body.show-spinner > * {
   opacity: 0;
 }
 
@@ -90,7 +90,7 @@ body.show-spinner::after {
 }
 
 .main-menu .active {
-  background-color: rgba(0,0,0,0.1);
+  background-color: rgba(0, 0, 0, 0.1);
 }
 
 .sub-menu .active {
@@ -114,19 +114,19 @@ body.show-spinner::after {
 }
 
 .navbar-brand {
-    padding: 0;
-    font-size: 1.2rem;
-    text-decoration: none;
-    font-family: var(--heading-font-family);
-    font-weight: 700;
-    margin: 0;
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
+  padding: 0;
+  font-size: 1.2rem;
+  text-decoration: none;
+  font-family: var(--heading-font-family);
+  font-weight: 700;
+  margin: 0;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 .navbar-brand:hover {
-    text-decoration: none;
+  text-decoration: none;
 }
 
 .navbar-brand img {
@@ -247,7 +247,6 @@ a:hover {
   gap: 0.5rem;
 }
 
-
 .navbar .d-flex.align-items-center.w-100 {
   display: flex !important;
   justify-content: space-between;
@@ -291,7 +290,7 @@ a:hover {
     padding: 0.5rem 1rem;
     height: 60px;
   }
-  
+
   .menu-mobile {
     background-color: var(--theme-color-4);
   }
@@ -393,14 +392,15 @@ a:hover {
 
 /* Submenu normal */
 .menu .sub-menu ul li a span,  /* Solo el texto del enlace */
-.menu .sub-menu ul li i:not(.simple-icon-arrow-down) { /* Excluir el ícono de flecha */
+.menu .sub-menu ul li i:not(.simple-icon-arrow-down) {
+  /* Excluir el ícono de flecha */
   color: var(--theme-color-5) !important;
   font-family: var(--content-font-family);
 }
 
 /* Asegurar que el ícono de flecha use su propia fuente */
 .simple-icon-arrow-down {
-  font-family: 'simple-line-icons' !important;
+  font-family: "simple-line-icons" !important;
 }
 
 /* Estado activo del submenu */
@@ -413,7 +413,8 @@ a:hover {
 /* Estado activo del submenu */
 .menu .sub-menu ul li.active a span,  /* Solo el texto del enlace */
 .menu .sub-menu ul li.active i:not(.simple-icon-arrow-down),
-.menu .sub-menu ul li a:hover span {  /* Solo el texto en hover */
+.menu .sub-menu ul li a:hover span {
+  /* Solo el texto en hover */
   color: var(--theme-color-1) !important;
 }
 
@@ -448,7 +449,7 @@ a:hover {
     padding: 0.5rem 1rem;
     height: 60px;
   }
-  
+
   .menu-mobile {
     background-color: var(--theme-color-4);
   }
@@ -463,8 +464,18 @@ a:hover {
 }
 
 /* Títulos */
-h1, h2, h3, h4, h5, h6,
-.h1, .h2, .h3, .h4, .h5, .h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6 {
   font-family: var(--heading-font-family);
   font-weight: 600;
 }
@@ -482,7 +493,7 @@ h1, h2, h3, h4, h5, h6,
 }
 
 /* Elementos de contenido que deben usar Poppins */
-p, 
+p,
 .card-text,
 .form-control,
 .input-group-text,
@@ -859,12 +870,12 @@ main {
 
 /* Estilo para subsección activa en el menú secundario */
 .menu .sub-menu ul li a.subsection-active {
-    color: var(--theme-color-1) !important; /* Verde del tema */
-    font-weight: 500;
+  color: var(--theme-color-1) !important; /* Verde del tema */
+  font-weight: 500;
 }
 
 .menu .sub-menu ul li a.subsection-active span {
-    color: var(--theme-color-1) !important;
+  color: var(--theme-color-1) !important;
 }
 
 /* Estilos para el header */
@@ -881,7 +892,7 @@ main {
 .vertical-separator {
   width: 1px;
   height: 40px;
-  background-color: rgba(255,255,255,0.2);
+  background-color: rgba(255, 255, 255, 0.2);
   margin: 0 15px;
 }
 
@@ -902,12 +913,12 @@ main {
     position: static;
     justify-content: center;
   }
-  
+
   .vertical-separator {
     height: 30px;
     margin: 0 10px;
   }
-  
+
   .upec-logo {
     height: 30px;
   }
@@ -986,241 +997,252 @@ main {
 
 /* Base styles para el botón de menú */
 .menu-button {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
 }
 
 .menu-button i {
-    display: inline-block;
-    color: var(--theme-color-4) !important;
-    transition: transform 0.3s ease;
-    transform: rotate(0deg);
+  display: inline-block;
+  color: var(--theme-color-4) !important;
+  transition: transform 0.3s ease;
+  transform: rotate(0deg);
 }
 
 /* Estilos base para el botón de menú */
 .menu-button {
-    background: transparent;
-    border: none;
-    cursor: pointer;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .menu-button .rotate-icon {
-    font-size: 1.5rem;
-    color: var(--theme-color-4);
-    display: inline-block;
-    transition: transform 0.3s ease-in-out;
-    will-change: transform;
-    transform-origin: center;
+  font-size: 1.5rem;
+  color: var(--theme-color-4);
+  display: inline-block;
+  transition: transform 0.3s ease-in-out;
+  will-change: transform;
+  transform-origin: center;
 }
 
 /* Estados de rotación */
 /* Estado inicial - menu y submenu ocultos (palos verticales) */
 #app-container.menu-hidden .menu-button .rotate-icon {
-    transform: rotate(90deg);
+  transform: rotate(90deg);
 }
 
 /* Solo menu principal visible (palos horizontales) */
 #app-container.menu-default.menu-sub-hidden .menu-button .rotate-icon {
-    transform: rotate(0deg);
+  transform: rotate(0deg);
 }
 
 /* Menu y submenu visibles (giro completo) */
 #app-container.menu-default:not(.menu-sub-hidden) .menu-button .rotate-icon {
-    transform: rotate(180deg);
+  transform: rotate(180deg);
 }
 
 /* Hover state */
 .menu-button:hover .rotate-icon {
-    color: var(--theme-color-3);
+  color: var(--theme-color-3);
 }
 
 /* Estilos base para el botón de menú */
 .menu-button .rotate-icon {
-    font-size: 1.5rem;
-    color: var(--theme-color-4);
-    display: inline-block;
-    transition: transform 0.3s ease-in-out;
-    will-change: transform;
-    transform-origin: center;
+  font-size: 1.5rem;
+  color: var(--theme-color-4);
+  display: inline-block;
+  transition: transform 0.3s ease-in-out;
+  will-change: transform;
+  transform-origin: center;
 }
 
 /* Estados de rotación con transiciones suaves */
 #app-container.menu-hidden .menu-button .rotate-icon {
-    transform: rotate(90deg);
+  transform: rotate(90deg);
 }
 
 #app-container.menu-default.menu-sub-hidden .menu-button .rotate-icon {
-    transform: rotate(0deg);
+  transform: rotate(0deg);
 }
 
 #app-container.menu-default:not(.menu-sub-hidden) .menu-button .rotate-icon {
-    transform: rotate(180deg);
+  transform: rotate(180deg);
 }
 
 /* Tamaños de texto estandarizados */
-h1, .h1 {
-    font-size: 28px !important;
-    line-height: 1.3;
+h1,
+.h1 {
+  font-size: 28px !important;
+  line-height: 1.3;
 }
 
-h2, .h2,
+h2,
+.h2,
 .card-title.large {
-    font-size: 24px !important;
-    line-height: 1.3;
+  font-size: 24px !important;
+  line-height: 1.3;
 }
 
-h3, .h3,
+h3,
+.h3,
 .card-title {
-    font-size: 18px !important;
-    line-height: 1.3;
+  font-size: 18px !important;
+  line-height: 1.3;
 }
 
-p, .card-text,
+p,
+.card-text,
 .btn,
 .nav-link,
 .dropdown-item {
-    font-size: 14px !important;
-    line-height: 1.5;
+  font-size: 14px !important;
+  line-height: 1.5;
 }
 
 /* Ajuste para íconos */
 .icon-size {
-    font-size: 42px !important;
-    margin-bottom: 1rem !important; /* Reducimos el espacio entre ícono y título */
+  font-size: 42px !important;
+  margin-bottom: 1rem !important; /* Reducimos el espacio entre ícono y título */
 }
 
 /* Ajustes responsive */
 @media (max-width: 767px) {
-    h1, .h1 {
-        font-size: 24px !important;
-    }
-    
-    h2, .h2,
-    .card-title.large {
-        font-size: 20px !important;
-    }
-    
-    h3, .h3,
-    .card-title {
-        font-size: 16px !important;
-    }
+  h1,
+  .h1 {
+    font-size: 24px !important;
+  }
+
+  h2,
+  .h2,
+  .card-title.large {
+    font-size: 20px !important;
+  }
+
+  h3,
+  .h3,
+  .card-title {
+    font-size: 16px !important;
+  }
 }
 
 /* Ajuste para íconos en cards */
 .icon-size {
-    font-size: 42px !important; /* Incrementamos el tamaño del ícono */
-    margin-bottom: 1rem !important; /* Reducimos el espacio entre ícono y título */
+  font-size: 42px !important; /* Incrementamos el tamaño del ícono */
+  margin-bottom: 1rem !important; /* Reducimos el espacio entre ícono y título */
 }
 
 /* Ajustes para las cards de la página de inicio */
 .equal-height-container .card {
-    height: 100%;
+  height: 100%;
 }
 
 .equal-height-container .card-body {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
-    padding: 1.5rem 1.25rem; /* Reducimos el padding general de las cards */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 1.5rem 1.25rem; /* Reducimos el padding general de las cards */
 }
 
 .equal-height-container .card-title {
-    font-size: 18px !important;
-    margin-top: 0;
-    margin-bottom: 1rem; /* Espacio entre título y descripción */
+  font-size: 18px !important;
+  margin-top: 0;
+  margin-bottom: 1rem; /* Espacio entre título y descripción */
 }
 
 .equal-height-container .card-text {
-    font-size: 14px !important;
-    margin-bottom: 0;
+  font-size: 14px !important;
+  margin-bottom: 0;
 }
 
 /* Contenedores principales con bordes redondeados */
 .card {
-    border-radius: var(--border-radius-md) !important;
+  border-radius: var(--border-radius-md) !important;
 }
 
 /* Cards dentro de contenedores - mantener consistencia */
 .card .card-body {
-    border-radius: var(--border-radius-md);
+  border-radius: var(--border-radius-md);
 }
 
 /* Mantener las esquinas cuadradas en header, menú y submenú */
 .navbar,
 .menu .main-menu,
 .menu .sub-menu {
-    border-radius: 0 !important;
+  border-radius: 0 !important;
 }
 
 /* Otros contenedores que necesitan bordes redondeados */
 .modal-content {
-    border-radius: var(--border-radius-md) !important;
+  border-radius: var(--border-radius-md) !important;
 }
 
 .dropdown-menu {
-    border-radius: var(--border-radius-sm) !important;
+  border-radius: var(--border-radius-sm) !important;
 }
 
 .alert {
-    border-radius: var(--border-radius-sm) !important;
+  border-radius: var(--border-radius-sm) !important;
 }
 
 /* Imágenes en cards */
 .card-img,
 .card-img-top,
 .card-img-bottom {
-    border-radius: var(--border-radius-md) !important;
+  border-radius: var(--border-radius-md) !important;
 }
 
 /* Contenedores de tabs */
 .tab-content {
-    border-radius: var(--border-radius-md);
+  border-radius: var(--border-radius-md);
 }
 
 /* Botones ya tienen su propio radio definido */
 
 /* Ajuste para tablas dentro de cards */
 .card .table {
-    border-radius: var(--border-radius-sm);
+  border-radius: var(--border-radius-sm);
 }
 
 /* Contenedor de videos y multimedia */
 .video-container {
-    border-radius: var(--border-radius-md);
-    overflow: hidden;
+  border-radius: var(--border-radius-md);
+  overflow: hidden;
 }
 
 /* Mantener bordes redondeados en responsive */
 @media (max-width: 767px) {
-    .card,
-    .modal-content,
-    .tab-content {
-        border-radius: var(--border-radius-sm) !important;
-    }
+  .card,
+  .modal-content,
+  .tab-content {
+    border-radius: var(--border-radius-sm) !important;
+  }
 }
 
 /* Ajuste para imágenes dentro de cards */
 .card .img-fluid {
-    border-radius: var(--border-radius-md) !important; /* Usar el mismo radio que las cards */
+  border-radius: var(
+    --border-radius-md
+  ) !important; /* Usar el mismo radio que las cards */
 }
 
 /* Asegurar que las imágenes redondeadas mantengan la consistencia */
 .img-fluid.rounded {
-    border-radius: var(--border-radius-md) !important; /* Sobrescribir la clase .rounded */
+  border-radius: var(
+    --border-radius-md
+  ) !important; /* Sobrescribir la clase .rounded */
 }
 
 /* Ajuste responsive */
 @media (max-width: 767px) {
-    .card .img-fluid,
-    .img-fluid.rounded {
-        border-radius: var(--border-radius-sm) !important;
-    }
+  .card .img-fluid,
+  .img-fluid.rounded {
+    border-radius: var(--border-radius-sm) !important;
+  }
 }
 
 /* Clase para el fondo gris de marca */
@@ -1229,169 +1251,169 @@ p, .card-text,
 }
 
 .bg-brand-gray .card-body {
-    border-radius: var(--border-radius-md);
+  border-radius: var(--border-radius-md);
 }
 
 /* Ajustes responsive para el search */
 @media (max-width: 500px) {
   .navbar .search {
-      display: none;
+    display: none;
   }
 }
 
 @media (max-width: 991px) {
-    .navbar .search {
-        width: 150px;
-    }
+  .navbar .search {
+    width: 150px;
+  }
 }
 
 @media (max-width: 805px) {
-    .navbar .search {
-        width: 30px;
-        height: 30px;
-        background: transparent;
-        margin-left: 0.6rem;
-    }
-    
-    .navbar .search input {
-        display: none;
-    }
-    
-    .navbar .search .search-icon {
-        font-size: 17px;
-        width: 30px;
-        height: 30px;
-        bottom: -3px;
-        right: 0;
-    }
+  .navbar .search {
+    width: 30px;
+    height: 30px;
+    background: transparent;
+    margin-left: 0.6rem;
+  }
+
+  .navbar .search input {
+    display: none;
+  }
+
+  .navbar .search .search-icon {
+    font-size: 17px;
+    width: 30px;
+    height: 30px;
+    bottom: -3px;
+    right: 0;
+  }
 }
 
 /* Estilos para timeline de colaboración */
 .timeline-item {
-    position: relative;
-    padding-top: 20px;
+  position: relative;
+  padding-top: 20px;
 }
 
 .timeline-item::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 50%;
-    width: 2px;
-    height: 100%;
-    background: rgba(var(--primary-rgb), 0.1);
-    transform: translateX(-50%);
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 2px;
+  height: 100%;
+  background: rgba(var(--primary-rgb), 0.1);
+  transform: translateX(-50%);
 }
 
 /* Círculos indicadores en timeline */
 .timeline-indicator {
-    position: absolute;
-    top: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    background: var(--theme-color-1);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 1;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: var(--theme-color-1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
 }
 
 .timeline-indicator i {
-    color: var(--theme-color-4);
-    font-size: 24px;
+  color: var(--theme-color-4);
+  font-size: 24px;
 }
 
 /* Cards de estadísticas */
 .stat-card {
-    padding: 1.5rem;
-    text-align: center;
-    border-right: 1px solid var(--separator-color-light);
+  padding: 1.5rem;
+  text-align: center;
+  border-right: 1px solid var(--separator-color-light);
 }
 
 .stat-card:last-child {
-    border-right: none;
+  border-right: none;
 }
 
 .stat-number {
-    font-size: 2.5rem;
-    font-weight: bold;
-    color: var(--theme-color-1);
-    margin-bottom: 0.5rem;
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: var(--theme-color-1);
+  margin-bottom: 0.5rem;
 }
 
 .stat-label {
-    color: var(--theme-color-5);
-    font-size: 0.9rem;
+  color: var(--theme-color-5);
+  font-size: 0.9rem;
 }
 
 /* Carousel personalizado */
 .custom-carousel {
-    border-radius: var(--border-radius-md);
-    overflow: hidden;
+  border-radius: var(--border-radius-md);
+  overflow: hidden;
 }
 
 .custom-carousel .carousel-item {
-    padding: 2rem;
+  padding: 2rem;
 }
 
 .custom-carousel .carousel-control-prev,
 .custom-carousel .carousel-control-next {
-    width: 40px;
-    height: 40px;
-    background: var(--theme-color-1);
-    border-radius: 50%;
-    opacity: 0.9;
-    top: 50%;
-    transform: translateY(-50%);
+  width: 40px;
+  height: 40px;
+  background: var(--theme-color-1);
+  border-radius: 50%;
+  opacity: 0.9;
+  top: 50%;
+  transform: translateY(-50%);
 }
 
 /* Responsive */
 @media (max-width: 767px) {
-    .timeline-item::before {
-        display: none;
-    }
-    
-    .stat-card {
-        border-right: none;
-        border-bottom: 1px solid var(--separator-color-light);
-        margin-bottom: 1rem;
-    }
-    
-    .stat-card:last-child {
-        border-bottom: none;
-    }
+  .timeline-item::before {
+    display: none;
+  }
+
+  .stat-card {
+    border-right: none;
+    border-bottom: 1px solid var(--separator-color-light);
+    margin-bottom: 1rem;
+  }
+
+  .stat-card:last-child {
+    border-bottom: none;
+  }
 }
 
 /* Estilos adicionales */
 .event-date {
-    min-width: 60px;
+  min-width: 60px;
 }
 .social-icons .btn {
-    width: 40px;
-    height: 40px;
-    padding: 0;
-    line-height: 40px;
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  line-height: 40px;
 }
 .social-icons .btn i {
-    line-height: 38px;
+  line-height: 38px;
 }
 /* Estilos adicionales para el calendario */
 .calendar {
-    min-height: 400px;
-    background: #fff;
+  min-height: 400px;
+  background: #fff;
 }
 .fc-view-container {
-    background: #fff;
+  background: #fff;
 }
 .fc-event {
-    cursor: pointer;
-    padding: 2px 4px;
+  cursor: pointer;
+  padding: 2px 4px;
 }
 .fc-day-grid-event .fc-content {
-    white-space: normal;
+  white-space: normal;
 }
 
 /* Estilos base del navbar */
@@ -1538,7 +1560,6 @@ p, .card-text,
     padding: 0 0.5rem !important;
   }
 
-
   /* Contraer search a solo ícono */
   .search {
     margin-left: 90px;
@@ -1658,3 +1679,15 @@ p, .card-text,
     height: 30px;
   }
 }
+/* estilos planta-produccion */
+.border-warning {
+  border-bottom: 2px solid #fece00;
+}
+.title-innov {
+  color: #5f5f5f;
+  border: 2px solid #fece00;
+  border-left: 0px;
+  border-bottom-right-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
